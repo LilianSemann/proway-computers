@@ -18,10 +18,10 @@ export class SearchBoxComponent {
 
   onSubmit() {
     if (this.search) {
-      this.router.navigate(['produtos'], { queryParams: { desc: this.search }}); 
+      this.router.navigate(['proway-computers/produtos'], { queryParams: { desc: this.search }}); 
       return;
     }
 
-    this.router.navigate(['produtos'])
+    this.router.navigate(['proway-computers/produtos'])
   }
 }
