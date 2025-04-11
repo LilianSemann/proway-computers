@@ -1,0 +1,78 @@
+<section class="contact-page">
+    <h1 class="contact-title">Entre em contato</h1>
+    <div class="contact-container">
+        <form class="contact-form" [formGroup]="formContact" (ngSubmit)="sendFormulary()">
+            <div class="contact-inputs">
+                <input 
+                    formControlName="email"
+                    type="email" 
+                    placeholder="Digite seu e-mail"
+                    [class.valid]="formContact.controls['email'].valid && (formContact.controls['email'].touched || formContact.controls['email'].dirty)"
+                    [class.invalid]="formContact.controls['email'].invalid && (formContact.controls['email'].touched || formContact.controls['email'].dirty)"
+                >
+                <div class="error-message" *ngIf="(formContact.controls['email'].invalid && formContact.controls['email'].touched) || formContact.controls['email'].dirty">
+                    <small *ngIf="formContact.controls['email'].hasError('email') && formContact.controls['email'].dirty">Email inválido</small>
+                    <small *ngIf="formContact.controls['email'].hasError('required') && formContact.controls['email'].dirty">Esse campo é obrigatrório.</small>
+                </div>
+            </div>
+            <div class="contact-inputs">
+                <input 
+                    formControlName="name"
+                    type="name" 
+                    placeholder="Digite seu nome"
+                    [class.valid]="formContact.controls['name'].valid && (formContact.controls['name'].touched || formContact.controls['name'].dirty)"
+                    [class.invalid]="formContact.controls['name'].invalid && (formContact.controls['name'].touched || formContact.controls['name'].dirty)"
+                >
+                <div class="error-message" *ngIf="(formContact.controls['name'].invalid && formContact.controls['name'].touched) || formContact.controls['name'].dirty">
+                    <small *ngIf="formContact.controls['name'].hasError('minlength') && formContact.controls['name'].dirty">Esse campo precisa de no mínimo 4 caractéres.</small>
+                    <small  *ngIf="formContact.controls['name'].hasError('required') && formContact.controls['name'].dirty">Esse campo é obrigatrório.</small>
+                </div>
+            </div>
+            <div class="contact-inputs">
+                <input 
+                    formControlName="tel"
+                    type="tel"
+                    mask="(00) 0 0000-0000"
+                    placeholder="(00) 0 0000-0000"
+                    [class.valid]="formContact.controls['tel'].valid && (formContact.controls['tel'].touched || formContact.controls['tel'].dirty)"
+                    [class.invalid]="formContact.controls['tel'].invalid && (formContact.controls['tel'].touched || formContact.controls['tel'].dirty)"
+                >
+                <div class="error-message" *ngIf="(formContact.controls['tel'].invalid && formContact.controls['tel'].touched) || formContact.controls['tel'].dirty">
+                    <small *ngIf="formContact.controls['tel'].hasError('minlength') && formContact.controls['tel'].dirty">Número inválido.</small>
+                    <small *ngIf="formContact.controls['tel'].hasError('required') && formContact.controls['tel'].dirty">Esse campo é obrigatrório.</small>
+                </div>
+            </div>
+            <div class="contact-inputs">
+                <input 
+                    formControlName="subject"
+                    type="subject" 
+                    placeholder="Digite o assunto"
+                    [class.valid]="formContact.controls['subject'].valid && (formContact.controls['subject'].touched || formContact.controls['subject'].dirty)"
+                    [class.invalid]="formContact.controls['subject'].invalid && (formContact.controls['subject'].touched || formContact.controls['subject'].dirty)"
+                >
+                <div class="error-message" *ngIf="(formContact.controls['subject'].invalid && formContact.controls['subject'].touched) || formContact.controls['subject'].dirty">
+                    <small *ngIf="formContact.controls['subject'].hasError('minlength') && formContact.controls['subject'].dirty">Esse campo precisa de no mínimo 8 caractéres.</small>
+                    <small *ngIf="formContact.controls['subject'].hasError('required') && formContact.controls['subject'].dirty">Esse campo é obrigatrório.</small>
+                </div>
+            </div>
+            <div class="contact-inputs">
+                <textarea
+                    rows="4"
+                    formControlName="message"
+                    placeholder="Digite sua mensagem..." maxlength="300"
+                    [class.valid]="formContact.controls['message'].valid && (formContact.controls['message'].touched || formContact.controls['message'].dirty)"
+                    [class.invalid]="formContact.controls['message'].invalid && (formContact.controls['message'].touched || formContact.controls['message'].dirty)"
+                ></textarea>
+                <div class="error-message" *ngIf="(formContact.controls['message'].invalid && formContact.controls['message'].touched) || formContact.controls['message'].dirty">
+                    <small *ngIf="formContact.controls['message'].hasError('minlength') && formContact.controls['message'].dirty">Esse campo precisa de no mínimo 10 caractéres.</small>
+                    <small *ngIf="formContact.controls['message'].hasError('required') && formContact.controls['message'].dirty">Esse campo é obrigatrório.</small>
+                </div>
+            </div>
+            <button type="submit" [disabled]="formContact.invalid">Enviar</button>
+        </form>
+        <address class="contact-adress">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1257.7867935789973!2d-49.07099364374269!3d-26.917510319210184!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94df18c3b4a71d65%3A0xa5ec9dd8406a6a7!2sProWay!5e0!3m2!1sen!2sbr!4v1744149481801!5m2!1sen!2sbr" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <p>R. 7 de Setembro, 1600 - 14º andar - Centro, Blumenau - SC, 89010-204</p>
+        </address>
+    </div>
+</section>

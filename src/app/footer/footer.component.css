@@ -1,0 +1,52 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+footer {
+    padding: 2rem;
+    width: 100%;
+    min-height: fit-content;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: rgb(240, 240, 240);
+    color: rgb(63, 63, 63);
+}
+
+.about .contact {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.about p {
+    width: 25rem;
+    font-weight: 300;
+    text-align: justify;
+}
+
+.contact {
+    font-style: normal;
+}
+
+.contact i {
+    color: rgb(255, 161, 19);
+}
+
+h2 {
+    color: rgb(19, 32, 151);
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.copyright {
+    width: 100vw;
+    text-align: center;
+    padding: 1rem;
+    font-weight: bold;
+    color: rgb(61, 61, 61);
+}
